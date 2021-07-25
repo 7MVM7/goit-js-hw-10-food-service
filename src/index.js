@@ -18,12 +18,14 @@ const ref = {
 // ref.menu.innerHTML=markUP;
 
 ref.menu.innerHTML = createMarkup(menu);
-refs.input.addEventListener('change', onChangeTheme);
+ref.input.addEventListener('change', onChangeTheme);
 
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
+
+console.log(ref.input)
 
 // function onChangeTheme(e) {
 //   if (!e.target.checked) {
@@ -43,7 +45,7 @@ function toggleTheme(add, rem) {
 //   refs.body.classList.add(add);
 //   refs.body.classList.remove(rem);
 
-  refs.body.classList.replace(rem,add);
+  ref.body.classList.replace(rem,add);
   localStorage.setItem('theme', add);
 }
 
@@ -52,11 +54,11 @@ function toggleTheme(add, rem) {
 // if (localStorage.getItem('theme', ) === Theme.DARK ){
     // if (localStorage.getItem('theme')) {
       // refs.body.classList.add(Theme.DARK);
-        refs.body.classList.add(localStorage.getItem('theme') ? localStorage.getItem('theme') : Theme.LIGHT);
+        ref.body.classList.add(localStorage.getItem('theme') ? localStorage.getItem('theme') : Theme.LIGHT);
     
 // refs.body.classList.add(Theme.DARK) 
 // refs.input.checked = true;
-refs.input.checked = localStorage.getItem('theme') === Theme.DARK;
+ref.input.checked = localStorage.getItem('theme') === Theme.DARK;
 // return;
   }
 
